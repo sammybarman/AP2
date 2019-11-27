@@ -1,0 +1,403 @@
+/* body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow: scroll;
+  }
+
+main {
+  flex: 1 0 auto;
+  }
+
+nav{
+  position: fixed;
+  background: rgba(0, 0, 0, 1);
+  padding:0px 20px;
+  z-index: 99999;
+  box-shadow: none !important;
+  transition: background-color 0.4s ease-out;
+}
+
+nav a:hover{
+  box-shadow: none;
+  font-size: 20px;
+  transition: font-size 0.1s ease-out;
+}
+
+nav a:visited{
+  text-decoration: none;
+  decoration: none;
+}
+
+.bg{
+  background: white;
+}
+
+ .bg2{
+   color: black;
+ }
+
+ .bg3{
+   color: white;
+ }
+
+ .bg4{
+   background: rgba(0, 0, 0, 0.5);
+ }
+
+ .background-tint {
+     background-color: rgba(0,255,0,.6); // Tint color
+     background-blend-mode: multiply;
+ }
+
+ .background-tint-logo {
+     background-color: rgba(0,0,0,.8); // Tint color
+     background-blend-mode: multiply;
+ }
+
+ .title-under {
+    width: 30px;
+    height: 2px;
+    background-color: #d2202f;
+ }
+
+
+ .card {
+   width: 500px !important;
+   height: 500px !important;
+ }
+
+ .cardstuff {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin-left: 0%;
+   margin-right: 0%;
+ }
+
+ .cardstuff1 {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   margin-left: 0%;
+   margin-right: 0%;
+ }
+
+ .carousel {
+   min-height: 60vh;
+   min-width: 100%;
+ }
+
+ .carousel-slider {
+   max-height: 100%;
+   min-width: 100%;
+ }
+
+ .carousel-item img {
+   min-height: 100%;
+   min-width: 100%;
+   object-fit: contain;
+ }
+
+ .productimg{
+   object-fit: contain;
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   height: 300px;
+   width: 273px;
+   max-height: 300px;
+   max-width: 273px;
+ }
+
+ .callbtn{
+   position:relative;
+   bottom: -20px;
+   right: 5px;
+ } */
+
+/* .parallax-container {
+    max-height: "700px";
+    width: 100%
+}
+.carousel {
+    max-height: 600px;
+    width: 100%;
+}
+
+.carousel-slider {
+    max-height: 600px;
+    width: 100%;
+}
+
+.background-tint {
+    background-color: rgba(0,255,0,.6); // Tint color
+    background-blend-mode: multiply;
+}
+
+
+nav ul a{
+  color: rgba(250,187,17,1);
+}
+
+nav a{
+  color: rgba(250,187,17,1);
+}
+
+nav ul a:hover{
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 20px;
+  color: black;
+  transition: all 100ms ease-out 100ms;
+}
+
+nav ul a.active{
+  color: black;
+  font-size: 20px;
+  transition: all 200ms ease-out 50ms;
+}
+
+.bg{
+  background:rgba(1,1,1,0.5)
+} */
+
+/* body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .dropdown-content {
+  padding: 0px;
+  margin: 0px;
+  background-color: white;
+  margin: 0;
+  display: none;
+  min-width: 600px;
+  max-height: auto;
+	margin-left: -1px;
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+  white-space: nowrap;
+  z-index: 1;
+  will-change: width, height;
+}
+
+nav{
+  position: fixed;
+  background: rgba(0, 0, 0, 1);
+  padding:0px 20px;
+  z-index: 99999;
+  box-shadow: none !important;
+  transition: background-color 0.4s ease-out;
+} */
+
+/* nav ul a{
+  color: rgba(0,0,255,0.6);
+}
+
+nav a{
+  color: rgba(0,0,255,0.6);
+} */
+
+/* .bg{
+  background: white;
+}
+
+ .bg2{
+   color: black;
+ }
+
+ .bg3{
+   color: white;
+ } */
+
+
+/*
+ul li a:focus{
+  outline: none !important;
+}
+
+.icon-white {
+    webkit-filter: contrast(4) invert(1);
+    -moz-filter: contrast(4) invert(1);
+    -o-filter: contrast(4) invert(1);
+    -ms-filter: contrast(4) invert(1);
+    filter: contrast(4) invert(1);
+}
+
+.cardstuff {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 0%;
+  margin-right: 0%;
+  height: 50px;
+}
+
+section img, .productimage{
+  min-height: 300px;
+  min-width: 170px;
+  max-height: 300px;
+  max-width: 170px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+/* .prodcutimage:hover{
+  transform: scale(1.5);
+} */
+
+/* .card:hover{
+  box-shadow: 5px 5px 10px grey;
+}
+
+.buynowbtn:hover{
+  transform: scale(1.2);
+  transition: transform 0.2s ease-out;
+}
+
+.modal:focus{
+  outline: none !important;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+} */
+
+
+
+/* .formelem{
+  margin-top: 2px;
+} */
+
+
+  /* .main-content{
+    top: 70px;
+    bottom: 50px;
+    width: 100%;
+    overflow: scroll;
+    position: fixed;
+  } */
+/* h3{
+  text-align: center;
+}
+
+.parallax-container {
+    height: 800px;
+    width: 100%;
+}
+.carousel {
+    max-height: 800px;
+    width: 100%;
+}
+
+.carousel-slider {
+    max-height: 800px;
+    width: 100%;
+}
+
+.carousel-item img {
+  max-height: 800px;
+  height: 600px;
+  width: 100%
+}
+
+.background-tint {
+    background-color: rgba(0,255,0,.6); // Tint color
+    background-blend-mode: multiply;
+}
+
+.background-tint-logo {
+    background-color: rgba(0,0,0,.8); // Tint color
+    background-blend-mode: multiply;
+}
+
+nav{
+  position: fixed;
+  background: rgba(0, 0, 0, 0);
+  padding:0px 20px;
+  z-index: 999;
+  box-shadow: none !important;
+  transition: background-color 0.4s ease-out;
+}
+
+nav ul a{
+  color: black;
+}
+
+nav a{
+  color: black;
+}
+
+nav ul a:hover{
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 20px;
+  color: red;
+  transition: all 100ms ease-out 100ms;
+}
+
+nav ul a.active{
+  color: black;
+  font-size: 20px;
+  transition: all 200ms ease-out 50ms;
+}
+
+.bg{
+  background:rgba(0,0,0,0.3);
+}
+
+.hideme {
+  opacity:0;
+}
+
+.card-medium {
+  width: 500px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.cardstuff {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+
+.title-under {
+  width: 30px;
+  height: 2px;
+  background-color: #d2202f;
+}
+
+.card {
+  width: 500px !important;
+  height: 500px !important;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+ */
+
+ /* label color */
