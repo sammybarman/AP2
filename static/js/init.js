@@ -28,18 +28,12 @@ $(window).scroll(function(){
 
   if($(window).scrollTop()>20){
     $('nav').addClass('bg');
-    $('section').addClass('black');
     $('.brand-logo').addClass('black-text');
     $('.forjq').addClass('bg2');
-    $('footer').addClass('white');
-    $('footlink').addClass('black-text');
   }else{
     $('nav').removeClass('bg');
     $('.brand-logo').removeClass('black-text');
     $('.forjq').removeClass('bg2');
-    $('section').removeClass('black');
-    $('footer').removeClass('white');
-    $('footlink').removeClass('black-text');
   }
 });
 
