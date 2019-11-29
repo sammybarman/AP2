@@ -90,3 +90,9 @@
      max-height: 100% !important;
      max-width: 100%;
    }
+
+   .contactsec{
+     background-image: url("/static/img/nav.jpeg");
+     background-repeat: no-repeat;
+     background-size: cover;
+   }
