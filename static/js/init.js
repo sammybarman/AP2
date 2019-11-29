@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $('.datepicker').datepicker({
     selectMonths: true,
-    minDate: new Date(2019,10,29)
+    minDate: new Date(2019,11,01)
   });
   $('.dropdown-trigger').dropdown({
     hover: true,
