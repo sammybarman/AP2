@@ -12,11 +12,9 @@
 </head>
 <body>
 
-  <nav>
+  <nav class="cyan accent-2">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">AP2.COM</a>
-      <ul id="nav-mobile" class=" right hide-on-med-and-down">
-        <li><a class="forjq" href="#!">Contact Us!</a></li>
+      <a href="#" class="brand-logo center black-text darken-4">AP2.COM</a>
     </div>
   </nav>
 
@@ -28,28 +26,88 @@
           <p>THE WORLD IS YOUR OYSTER. FROM POSH METRO HOTELS TO HOMELY COUNTRY INNS, EXPLORE THE NATION WITH US!</p>
         </div>
         <div class="row">
-          <div class="col s12 m4 l4" style="margin-top:40px;background:white;height:50px;border:2px solid black">
-
+          <div class="input-field col s12 m4 l4" style="margin-top:43px;background:white;min-height:50px;border:2px solid black">
+            <input placeholder="DESTINATION" type="text" id="autocomplete" class="autocomplete">
           </div>
-          <div class="col s12 m4 l3 " style="margin-top:40px;background:white;height:50px;border:2px solid black">
-
+          <div class="input-field col s12 m4 l3 " style="margin-top:43px;background:white;min-height:50px;border:2px solid black">
+            <input id="start" type="date" class="datepicker" placeholder="FROM">
           </div>
-          <div class="col s12 m4 l3 " style="margin-top:40px;background:white;height:50px;border:2px solid black">
-
+          <div class="input-field col s12 m4 l3 " style="margin-top:43px;background:white;min-height:50px;border:2px solid black">
+            <input id="end" type="date" class="datepicker" placeholder="TO">
           </div>
-          <div class="col s12 m4 l1 " style="margin-top:40px;background:white;height:50px;border:2px solid black;padding:0px">
-            <button class="btn blue center white-text darken-1" style="width:100%; height: 100%; text-align:center">SEARCH</button>
+          <div class="col s12 m4 l1 " style="margin-top:44px;padding:0px;margin-left: 10px">
+            <div class="valign-wrapper center-align">
+              <button class="btn btn-large forjq center cyan accent-2 black-text waves-effect"><i class="material-icons center">search</i></button>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="popular">
+      <br>
+      <h3 class="center"> POPULAR DESTINATIONS </h3>
+      <br>
+      <div class="row">
+        <div class="col s12 m3 l4">
+          <div class="card cardstuff teal">
+            <div class="card-image">
+                <img src="/static/img/delhi.jpeg">
+                <span class="card-title">DELHI</span>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m3 l4">
+          <div class="card cardstuff teal">
+            <div class="card-image">
+                <img src="/static/img/mumbai.jpeg">
+                <span class="card-title">MUMBAI</span>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m3 l4">
+          <div class="card cardstuff teal">
+            <div class="card-image">
+                <img src="/static/img/kolkata.jpeg">
+                <span class="card-title">KOLKATA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m3 l4">
+          <div class="card cardstuff teal">
+            <div class="card-image">
+                <img src="/static/img/bangalore.jpeg">
+                <span class="card-title">BANGALORE</span>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m3 l4">
+          <div class="card cardstuff teal">
+            <div class="card-image">
+                <img src="/static/img/hyderabad.jpeg">
+                <span class="card-title">HYDERABAD</span>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m3 l4">
+          <div class="card cardstuff teal">
+            <div class="card-image">
+                <img src="/static/img/chennai.jpeg">
+                <span class="card-title">CHENNAI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
   </section>
 
-  <footer style="padding-top: 0; background: black" class="page-footer">
+  <footer style="padding-top: 0" class="page-footer cyan accent-2">
     <div class="footer-copyright">
-      <div class="container white-text text-lighten-4 footlink">
+      <div class="container black-text text-darken-4 footlink">
         © 2019
-        <a class="white-text text-lighten-4 right footlink" href="/contact">CONTACT US!</a>
+        <a class="black-text text-darken-4 right footlink" href="/contact">CONTACT US!</a>
       </div>
     </div>
   </footer>

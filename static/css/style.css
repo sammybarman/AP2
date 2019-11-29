@@ -11,7 +11,6 @@
 
   nav{
     position: fixed;
-    background: rgba(0, 0, 0, 1);
     padding:0px 20px;
     z-index: 99999;
     box-shadow: none !important;
@@ -46,7 +45,7 @@
   }
 
   .bg{
-    background: white;
+    background: rgba(141, 250, 241,0.7);
   }
 
   .bg2{
@@ -60,27 +59,31 @@
     background-size: cover;
   }
 
+  .popular{
+    min-height: 500px !important;
+    background-image: url("/static/img/background1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
 
 
   .card {
-     width: 500px !important;
-     height: 500px !important;
+     width: 300px !important;
+     height: 300px !important;
    }
 
   .cardstuff {
      display: flex;
      flex-wrap: wrap;
      justify-content: center;
-     margin-left: 0%;
+     margin-left: 60px;
      margin-right: 0%;
    }
 
-  .cardstuff1 {
-     display: flex;
-     flex-wrap: wrap;
-     justify-content: center;
-     margin-left: 0%;
-     margin-right: 0%;
+   .card-image img{
+     height:300px !important;
+     width:300px !important;
    }
 
    .carousel {
@@ -115,6 +118,11 @@
      bottom: -20px;
      right: 5px;
    } */
+
+   .forjq{
+     max-height: 100% !important;
+     max-width: 100%;
+   }
 
   /* .parallax-container {
       max-height: "700px";
