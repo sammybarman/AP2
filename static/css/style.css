@@ -63,7 +63,7 @@
   }
 
   .infosection{
-    min-height: 100vh !important;
+    max-height: 150vh !important;
     background-image: url("/static/img/info.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -128,4 +128,22 @@
      background-image: url("/static/img/nav.jpeg");
      background-repeat: no-repeat;
      background-size: cover;
+   }
+
+   .indhotellist{
+     background-image: url("/static/img/nav.jpeg");
+     background-repeat: no-repeat;
+     background-size: cover;
+   }
+
+   .indhotel{
+     z-index: 99999;
+   }
+   .indhotel img{
+     max-height: 300px;
+     max-width: 300px;
+   }
+
+   .indhotel:hover{
+     background: rgba(5, 211, 242, 0.3);
    }
