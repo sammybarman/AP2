@@ -55,6 +55,29 @@
     background-size: cover;
   }
 
+  .infobooking{
+    height: 90px !important;
+    background-image: url("/static/img/nav.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .infosection{
+    min-height: 100vh !important;
+    background-image: url("/static/img/info.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .hotellist{
+    height: 300px !important;
+  }
+
+  .hotellist img{
+    max-height: 300px;
+    max-width: 300px;
+  }
+
   .popular{
     min-height: 500px !important;
     background-image: url("/static/img/background1.png");
@@ -92,6 +115,16 @@
    }
 
    .contactsec{
+     background-image: url("/static/img/nav.jpeg");
+     background-repeat: no-repeat;
+     background-size: cover;
+   }
+
+   hr{
+     border: 1px solid black;
+   }
+
+   .infofilter{
      background-image: url("/static/img/nav.jpeg");
      background-repeat: no-repeat;
      background-size: cover;

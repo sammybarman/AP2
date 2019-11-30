@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AP2</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/materialize.min.css')}}" media="screen,projection">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" media="screen,projection">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center black-text darken-4">HOTELIER</a>
+    </div>
+  </nav>
+
+  <div style="margin-top:80px" class="infobooking">
+    <div class="row" style="margin-left:70px">
+      <div class="input-field col s4 m4 l4" style="background:white;min-height:50px;border:2px solid black">
+        <input placeholder="DESTINATION" type="text" id="autocomplete" class="autocomplete">
+      </div>
+      <div class="input-field col s3 m3 l3 " style="background:white;min-height:50px;border:2px solid black">
+        <input id="start" type="date" class="datepicker" placeholder="FROM">
+      </div>
+      <div class="input-field col s3 m3 l3 " style="background:white;min-height:50px;border:2px solid black">
+        <input id="end" type="date" class="datepicker" placeholder="TO">
+      </div>
+      <div class="col s1 m1 l1 " style="margin-top:15px;padding:0px;margin-left: 10px">
+        <div class="valign-wrapper center-align">
+          <button class="btn btn-large forjq center cyan accent-3 black-text waves-effect"><i class="material-icons center">search</i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="infosection">
+    <h3 class="center">TOP HOTELS IN YOUR LOCATION</h3>
+    <div class="row">
+      <div class="col s2 m2 l2 white infofilter" style="min-height:100vh; margin-left: 20px;border: 2px solid black;">
+        <div class="row center" style="margin-top:0px">
+          <p class="black-text">FILTER BY</p>
+          <hr>
+          <div>
+            <p class="center"><b>Ratings</b></p>
+            <form action="#">
+              <p style="margin-left:-7px">
+                <label>
+                  <input type="checkbox" />
+                  <span class="black-text">1 Star</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" />
+                  <span class="black-text">2 Stars</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" />
+                  <span class="black-text">3 Stars</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" />
+                  <span class="black-text">4 Stars</span>
+                </label>
+              </p>
+              <p>
+                <label>
+                  <input type="checkbox" />
+                  <span class="black-text">5 Stars</span>
+                </label>
+              </p>
+            </form>
+          </div>
+          <hr>
+          <div>
+            <p class="center"><b>Amenities and Features</b></p>
+            <div class="input-field col s12">
+              <select multiple>
+                <option value="" disabled selected>Hotel Perks</option>
+                <option value="1">Free Wi-Fi</option>
+                <option value="2">Free Parking</option>
+                <option value="3">Car Park</option>
+              </select>
+            </div>
+            <div class="input-field col s12">
+              <select multiple>
+                <option value="" disabled selected>Room Features</option>
+                <option value="1">Air-Conditioned Rooms</option>
+                <option value="2">Fireplace</option>
+                <option value="3">Housekeeping</option>
+              </select>
+            </div>
+            <br>
+          </div>
+          <hr>
+          <div>
+            <p class="center"><b>Price</b></p>
+            <p>Minimum</p>
+            <div class="input-field col s12">
+              <select multiple>
+                <option value="" disabled selected>Minimum Price</option>
+                <option value="1">Rs. 0</option>
+                <option value="2">Rs. 1000</option>
+                <option value="3">Rs. 5000</option>
+                <option value="4">Rs. 10000</option>
+                <option value="5">Rs. 15000</option>
+                <option value="6">Rs. 20000</option>
+                <option value="7">Rs. 25000</option>
+                <option value="8">Rs. 30000</option>
+              </select>
+            </div>
+            <p>Maximum</p>
+            <div class="input-field col s12">
+              <select multiple>
+                <option value="" disabled selected>Maximum Price</option>
+                <option value="1">Rs. 1000</option>
+                <option value="2">Rs. 2000</option>
+                <option value="3">Rs. 5000</option>
+                <option value="4">Rs. 10000</option>
+                <option value="5">Rs. 15000</option>
+                <option value="6">Rs. 20000</option>
+                <option value="7">Rs. 25000</option>
+                <option value="8">Rs. 30000</option>
+                <option value="9">Rs. 35000</option>
+                <option value="10">Rs. 40000</option>
+                <option value="11">Rs. 45000</option>
+                <option value="12">Rs. >50000</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding-top: 0" class="page-footer">
+    <div class="footer-copyright">
+      <div class="container black-text text-darken-4 footlink">
+        © 2019
+        <a class="black-text text-darken-4 right footlink" href="/contact">CONTACT US!</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous">
+  </script>
+  <script src="static/js/materialize.js"></script>
+  <script src="static/js/init.js"></script>
+
+</body>
+</html>
