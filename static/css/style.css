@@ -140,8 +140,8 @@
      z-index: 99999;
    }
    .indhotel img{
-     max-height: 300px;
-     max-width: 300px;
+     max-height: 150px;
+     max-width: 150px;
    }
 
    .indhotel:hover{
