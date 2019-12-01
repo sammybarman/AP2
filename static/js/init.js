@@ -36,3 +36,44 @@ function getHotels() {
     window.location = path;
   }
 }
+
+function getFilterHotels() {
+  body = {
+    amenities: $('#amenities').val(),
+    features: $('#features').val(),
+    price_min: $('#price_min').val(),
+    price_max: $('#price_max').val(),
+    city: $('#autocomplete').val()
+  }
+  nodes = document.querySelectorAll('input[name=rating]:checked');
+  rating = []
+  nodes.forEach(function(item){
+    rating.push(item.value);
+  });
+  body.rating = rating;
+  if (body.amenities.length == 0) {
+    body.amenities.push('');
+  }
+  if (body.features.length == 0) {
+    body.features.push('');
+  }
+  if (body.price_min == null) {
+    body.price_min = 0;
+  }
+  if (body.price_max == null) {
+    body.price_max = 100000;
+  }
+  console.log(body);
+  $.ajax({
+    url: "getfilterhotels",
+    type: 'POST',
+    data: JSON.stringify(body),
+    contentType: 'application/json',
+    dataType: 'html',
+    success: function(result) {
+      $('#hotellist').empty();
+      // console.log(result);
+      $('#hotellist').html(result);
+    }
+  });
+}
