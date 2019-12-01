@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, render_template_string
-import sqlite3, json
+import sqlite3, json, datetime
 
 app = Flask(__name__)
 
@@ -16,7 +16,17 @@ def contactPage():
 
 @app.route("/checkout")
 def checkoutPage():
-    return render_template("checkout.html")
+    hotel_id = request.args.get('hotel_id')
+    date_from = request.args.get('date_from')
+    date_to = request.args.get('date_to')
+    adults = request.args.get('adults')
+    child = request.args.get('child')
+    cur.execute('SELECT NAME, PRICE FROM HOTELS WHERE ID == ?', (hotel_id,))
+    (name, price) = cur.fetchone()
+    date_from_obj = datetime.datetime.strptime(date_from, '%b %d, %Y')
+    date_to_obj = datetime.datetime.strptime(date_to, '%b %d, %Y')
+    days = (date_to_obj - date_from_obj).days
+    return render_template("checkout.html", data={'name': name, 'adults': adults, 'child': child, 'price': price, 'days': days})
 
 @app.route("/gethoteldetails")
 def hotelPage():
@@ -45,7 +55,7 @@ def hotelPage():
         element['user'] = row[2]
         element['title'] = row[3]
         comments.append(element)
-    return render_template("hotel.html", data={'location': location, 'date_from': date_from, 'date_to':date_to, 'img': img, 'name': name, 'info': info, 'getting_there': getting_there, 'nearby_rest': nearby_rest, 'near_attr': nearby_attr, 'features': features, 'amenities': amenities, 'faqs': faqs, 'comments': comments})
+    return render_template("hotel.html", data={'hotel_id': hotel_id, 'location': location, 'date_from': date_from, 'date_to':date_to, 'img': img, 'name': name, 'info': info, 'getting_there': getting_there, 'nearby_rest': nearby_rest, 'near_attr': nearby_attr, 'features': features, 'amenities': amenities, 'faqs': faqs, 'comments': comments})
 
 @app.route("/gethotels")
 def infoPage():

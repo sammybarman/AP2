@@ -88,3 +88,30 @@ function getHotelDetails(elem) {
   path = '/gethoteldetails?hotel_id='+elem.value+'&location='+loc+'&date_from='+date_from+'&date_to='+date_to;
   window.location = path;
 }
+
+function checkoutPage() {
+  if ($('#start').val() == '' || $('#end').val() == ''|| $('#adults').val() == '' || $('#children').val() == '' || $('#autocomplete').val() == '') {
+    alert('You must Enter Location, Start Date, End Date and Number of Adults and Children!');
+  }
+  else {
+    loc = $('#autocomplete').val();
+    date_from = $('#start').val();
+    date_to = $('#end').val();
+    adults = $('#adults').val();
+    child = $('#children').val();
+    hotel_id = $('#checkout_btn').val();
+    path = '/checkout?hotel_id='+hotel_id+'&location='+loc+'&date_from='+date_from+'&date_to='+date_to+'&adults='+adults+'&child='+child;
+    window.location = path;
+  }
+}
+
+function calcCost() {
+  rooms = $('#rooms').val();
+  if (rooms == '') {
+    cost = '';
+  }
+  else {
+    cost = $('#price').data('price') * $('#days').data('days') * parseInt(rooms);
+  }
+  $('#totalcost').html('<b>Total Price - '+cost+'</b>')
+}
