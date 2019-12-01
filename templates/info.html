@@ -46,34 +46,34 @@
           <hr>
           <div>
             <p class="center"><b>Ratings</b></p>
-            <form action="#">
+            <form onchange="getFilterHotels()" action="#">
               <p style="margin-left:-7px">
                 <label>
-                  <input type="checkbox" />
+                  <input value="1" name="rating" type="checkbox" />
                   <span class="black-text">1 Star</span>
                 </label>
               </p>
               <p>
                 <label>
-                  <input type="checkbox" />
+                  <input value="2" type="checkbox" name="rating" />
                   <span class="black-text">2 Stars</span>
                 </label>
               </p>
               <p>
                 <label>
-                  <input type="checkbox" />
+                  <input value="3" type="checkbox" name="rating"/>
                   <span class="black-text">3 Stars</span>
                 </label>
               </p>
               <p>
                 <label>
-                  <input type="checkbox" />
+                  <input value="4" type="checkbox" name="rating"/>
                   <span class="black-text">4 Stars</span>
                 </label>
               </p>
               <p>
                 <label>
-                  <input type="checkbox" />
+                  <input value="5" type="checkbox" name="rating"/>
                   <span class="black-text">5 Stars</span>
                 </label>
               </p>
@@ -83,7 +83,7 @@
           <div>
             <p class="center"><b>Amenities and Features</b></p>
             <div class="input-field col s12">
-              <select multiple>
+              <select id="amenities" onchange="getFilterHotels()" multiple>
                 <option value="" disabled selected>Hotel Perks</option>
                 {% for amenity in data['amenities'] %}
                   <option value="{{amenity}}">{{amenity}}</option>
@@ -91,7 +91,7 @@
               </select>
             </div>
             <div class="input-field col s12">
-              <select multiple>
+              <select id="features" onchange="getFilterHotels()" multiple>
                 <option value="" disabled selected>Room Features</option>
                 {% for feature in data['features'] %}
                   <option value="{{feature}}">{{feature}}</option>
@@ -105,40 +105,39 @@
             <p class="center"><b>Price</b></p>
             <p>Minimum</p>
             <div class="input-field col s12">
-              <select>
+              <select id="price_min" onchange="getFilterHotels()">
                 <option value="" disabled selected>Minimum Price</option>
-                <option value="1">Rs. 0</option>
-                <option value="2">Rs. 1000</option>
-                <option value="3">Rs. 5000</option>
-                <option value="4">Rs. 10000</option>
-                <option value="5">Rs. 15000</option>
-                <option value="6">Rs. 20000</option>
-                <option value="7">Rs. 25000</option>
-                <option value="8">Rs. 30000</option>
+                <option value="1000">Rs. 1000</option>
+                <option value="5000">Rs. 5000</option>
+                <option value="10000">Rs. 10000</option>
+                <option value="15000">Rs. 15000</option>
+                <option value="20000">Rs. 20000</option>
+                <option value="25000">Rs. 25000</option>
+                <option value="30000">Rs. 30000</option>
               </select>
             </div>
             <p>Maximum</p>
             <div class="input-field col s12">
-              <select>
+              <select id="price_max" onchange="getFilterHotels()">
                 <option value="" disabled selected>Maximum Price</option>
-                <option value="1">Rs. 1000</option>
-                <option value="2">Rs. 2000</option>
-                <option value="3">Rs. 5000</option>
-                <option value="4">Rs. 10000</option>
-                <option value="5">Rs. 15000</option>
-                <option value="6">Rs. 20000</option>
-                <option value="7">Rs. 25000</option>
-                <option value="8">Rs. 30000</option>
-                <option value="9">Rs. 35000</option>
-                <option value="10">Rs. 40000</option>
-                <option value="11">Rs. 45000</option>
-                <option value="12">Rs. >50000</option>
+                <option value="1000">Rs. 1000</option>
+                <option value="2000">Rs. 2000</option>
+                <option value="5000">Rs. 5000</option>
+                <option value="10000">Rs. 10000</option>
+                <option value="15000">Rs. 15000</option>
+                <option value="20000">Rs. 20000</option>
+                <option value="25000">Rs. 25000</option>
+                <option value="30000">Rs. 30000</option>
+                <option value="35000">Rs. 35000</option>
+                <option value="40000">Rs. 40000</option>
+                <option value="45000">Rs. 45000</option>
+                <option value="50000">Rs. >50000</option>
               </select>
             </div>
           </div>
         </div>
       </div>
-      <div class="col s10 m10 l8 indhotellist" style="max-height:100vh;margin-left: 50px; border: 2px solid black; overflow: scroll">
+      <div class="col s10 m10 l8 indhotellist" id="hotellist" style="max-height:100vh;margin-left: 50px; border: 2px solid black; overflow: scroll">
         {% for hotel in data['hotels'] %}
           <div class="indhotel" style="border:2px solid indigo; margin:10px">
             <div class="row">
