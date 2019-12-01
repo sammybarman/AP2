@@ -23,3 +23,16 @@ $(document).ready(function(){
 function getId() {
   alert($('#autocomplete').data('id'));
 }
+
+function getHotels() {
+  loc = $('#autocomplete').val();
+  if (loc == '') {
+    alert('You have to select location!');
+  }
+  else {
+    date_from = $('#start').val();
+    date_to = $('#end').val();
+    path = '/gethotels?location='+loc+'&date_from='+date_from+'&date_to='+date_to;
+    window.location = path;
+  }
+}
