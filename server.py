@@ -101,12 +101,13 @@ def getfilterhotels():
             wheres += ' OR STARS == {}'.format(i)
         wheres += ')'
     wheres += ' AND PRICE >= {} AND PRICE <= {}'.format(js['price_min'], js['price_max'])
-    sql_query = 'SELECT IMGS, STARS, NAME, CITY, INFO FROM CITIES, HOTELS{}'.format(wheres)
+    sql_query = 'SELECT IMGS, STARS, NAME, CITY, INFO, HOTELS.ID FROM CITIES, HOTELS{}'.format(wheres)
     # print(sql_query)
     cur.execute(sql_query, (js['city'],))
     hotels = []
     for row in cur.fetchall():
         element = dict()
+        element['id'] = row[5]
         img_list = json.loads(row[0])
         if len(img_list) == 0:
             element['img'] = 'static/img/no_img.jpg'
@@ -126,7 +127,7 @@ def getfilterhotels():
             <div class="cyan accent-3" style="width:70px; height:30px; margin-left:35%; margin-top:20px">
               <p style="color: black" class="valign-center">{{hotel['stars']}} stars</p>
             </div>
-            <button type="button" name="button" class="btn waves-effect cyan accent-3 black-text"style="margin-top: 10px">Show Prices</button>
+            <button value="{{hotel['id']}}" onclick="getHotelDetails(this)" type="button" name="button" class="btn waves-effect cyan accent-3 black-text"style="margin-top: 10px">Show Prices</button>
           </div>
           <div class="col s7 m7 l7">
             <p style="font-size: 20px" class="black-text"><b>{{hotel['name']}}</b></p>
