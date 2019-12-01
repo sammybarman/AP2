@@ -14,9 +14,34 @@ def renderPage():
 def contactPage():
     return render_template("contact.html")
 
-@app.route("/hotel")
+@app.route("/gethoteldetails")
 def hotelPage():
-    return render_template("hotel.html")
+    hotel_id = request.args.get('hotel_id')
+    location = request.args.get('location')
+    date_from = request.args.get('date_from')
+    date_to = request.args.get('date_to')
+    cur.execute('SELECT IMGS, NAME, INFO, GETTING_THERE, NEARBY_REST, NEARBY_ATTR, FEATURES, AMENITIES, FAQS FROM HOTELS WHERE ID == ?', (hotel_id,))
+    hotel = cur.fetchone()
+    img = json.loads(hotel[0])
+    name = hotel[1]
+    info = hotel[2]
+    getting_there = json.loads(hotel[3])
+    nearby_rest = json.loads(hotel[4])
+    nearby_attr = json.loads(hotel[5])
+    features = json.loads(hotel[6])
+    amenities = json.loads(hotel[7])
+    faqs = json.loads(hotel[8])
+    cur.execute('SELECT COMMENT, RATING, USER, TITLE FROM COMMENTS WHERE HOTEL_ID == ?', (hotel_id,))
+    rows = cur.fetchall()
+    comments = []
+    for row in rows:
+        element = dict()
+        element['body'] = row[0]
+        element['rating'] = row[1]
+        element['user'] = row[2]
+        element['title'] = row[3]
+        comments.append(element)
+    return render_template("hotel.html", data={'location': location, 'date_from': date_from, 'date_to':date_to, 'img': img, 'name': name, 'info': info, 'getting_there': getting_there, 'nearby_rest': nearby_rest, 'near_attr': nearby_attr, 'features': features, 'amenities': amenities, 'faqs': faqs, 'comments': comments})
 
 @app.route("/gethotels")
 def infoPage():
@@ -31,7 +56,7 @@ def infoPage():
         features.extend(json.loads(row[1]))
     amenities = list(set(amenities))
     features = list(set(features))
-    cur.execute('SELECT IMGS, STARS, NAME, CITY, INFO FROM CITIES, HOTELS WHERE CITIES.ID == CITY_ID AND CITY == ?', (location, ))
+    cur.execute('SELECT IMGS, STARS, NAME, CITY, INFO, HOTELS.ID FROM CITIES, HOTELS WHERE CITIES.ID == CITY_ID AND CITY == ?', (location, ))
     hotels = []
     for row in cur.fetchall():
         element = dict()
@@ -40,6 +65,7 @@ def infoPage():
             element['img'] = 'static/img/no_img.jpg'
         else:
             element['img'] = img_list[0]
+        element['id'] = row[5]
         element['stars'] = row[1]
         element['name'] = row[2]
         element['city'] = row[3]

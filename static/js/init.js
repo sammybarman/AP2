@@ -78,3 +78,12 @@ function getFilterHotels() {
     }
   });
 }
+
+function getHotelDetails(elem) {
+  console.log(elem.value);
+  loc = $('#autocomplete').val();
+  date_from = $('#start').val();
+  date_to = $('#end').val();
+  path = '/gethoteldetails?hotel_id='+elem.value+'&location='+loc+'&date_from='+date_from+'&date_to='+date_to;
+  window.location = path;
+}

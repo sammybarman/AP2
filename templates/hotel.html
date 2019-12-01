@@ -21,13 +21,13 @@
   <div style="margin-top:80px" class="infobooking">
     <div class="row" style="margin-left:70px">
       <div class="input-field col s4 m4 l4" style="background:white;min-height:50px;border:2px solid black">
-        <input placeholder="DESTINATION" type="text" id="autocomplete" class="autocomplete">
+        <input placeholder="DESTINATION" value="{{data['location']}}" type="text" id="autocomplete" class="autocomplete">
       </div>
       <div class="input-field col s3 m3 l3 " style="background:white;min-height:50px;border:2px solid black">
-        <input id="start" type="date" class="datepicker" placeholder="FROM">
+        <input id="start" value="{{data['date_from']}}" type="date" class="datepicker" placeholder="FROM">
       </div>
       <div class="input-field col s3 m3 l3 " style="background:white;min-height:50px;border:2px solid black">
-        <input id="end" type="date" class="datepicker" placeholder="TO">
+        <input id="end" type="date" value="{{data['date_to']}}" class="datepicker" placeholder="TO">
       </div>
       <div class="col s1 m1 l1 " style="margin-top:15px;padding:0px;margin-left: 10px">
         <div class="valign-wrapper center-align">
@@ -41,30 +41,13 @@
     <div class="container">
       <div class="row">
         <div class="carousel">
-          <a class="carousel-item" href="#one!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/b8/c1/b0/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#two!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/eb/72/7d/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#three!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/e2/9d/b5/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#four!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/e2/9e/59/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#five!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/eb/73/c2/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#six!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/19/66/fc/4d/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#seven!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/19/66/fc/5b/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#eight!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/19/66/fc/63/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#nine!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/19/66/fc/5e/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#ten!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/eb/6f/c3/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#eleven!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/e2/9d/fd/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#twelve!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/19/66/fc/60/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#thirteen!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/19/66/fc/4f/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#fourteen!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/e2/9c/cd/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#fifteen!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/e2/9b/55/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#sixteen!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/e2/9b/03/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#seventeen!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/e2/9a/b1/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#eighten!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/e2/9a/3b/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#nineteen!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/e2/9a/04/srtc-hotel-aspire.jpg"></a>
-          <a class="carousel-item" href="#twenty!"><img src="https://media-cdn.tripadvisor.com/media/photo-l/17/e2/99/a4/srtc-hotel-aspire.jpg"></a>
+          {% for img in data['img'] %}
+            <a class="carousel-item" href="#"><img src="{{img}}"></a>
+          {% endfor %}
         </div>
       </div>
       <div class="row">
-        <h3 class="center">SRTC Hotel Aspire,2240</h3>
+        <h3 class="center">{{data['name']}}</h3>
       </div>
       <br>
       <div class="row" style="border: 0.5px solid black">
@@ -85,69 +68,62 @@
       <br>
       <div class="row">
         <p class="center" style="font-size:20px"><b>Description</b></p>
-        <p>Located within 3.4 km of Gandhi Ashram and 5 km of IIM, SRTC Hotel Aspire features rooms with air conditioning and a shared bathroom in Ahmedabad. This 3-star hotel offers a tour desk and ticket service. The accommodation provides a 24-hour front desk, a shuttle service, room service, and free WiFi. At the hotel, each room comes with a desk, a flat-screen TV and a private bathroom. Guests at the SRTC Hotel Aspire can enjoy an Asian breakfast. Sardar Patel Stadium is 9 km from the accommodation, while Adani Group is 2 km away. The nearest airport is Sardar Vallabhbhai Patel International Airport, 17 km from SRTC Hotel Aspire. This is our guests' favorite part of Ahmedabad, according to independent reviews</p>
+        <p>{{data['info']}}</p>
       </div>
       <hr>
-      <div class="row" style="max-height:10vh">
+      <div class="row" style="max-height:15vh">
         <p class="center" style="font-size:20px"><b>Property Surroundings</b></p>
-        <div class="col s4 m4 l4 left" style="border-right: 1px solid black;max-height:10vh; overflow:auto">
-          <p>Ahmedabad Airport - 6kms</p>
-          <p>Gwalia Restaurant - 12kms</p>
-
+        <div class="col s4 m4 l4 left" style="border-right: 1px solid black;max-height:15vh; overflow:auto">
+          {% for get_there in data['getting_there'] %}
+            <p>{{get_there['name']}} - {{get_there['distance']}}</p>
+          {% endfor %}
         </div>
-        <div class="col s4 m4 l4 left" style="border-right: 1px solid black;max-height:10vh;overflow:auto">
-          <p>The Fortune Landmark Restaurant - 10kms</p>
-          <p>Adalaj Step-well - 4kms</p>
+        <div class="col s4 m4 l4 left" style="border-right: 1px solid black;max-height:15vh;overflow:auto">
+          {% for near_rest in data['nearby_rest'] %}
+            <p>{{near_rest['name']}} - {{near_rest['distance']}}</p>
+          {% endfor %}
         </div>
-        <div class="col s4 m4 l4 left" style="overflow:auto;max-height: 10vh">
-          <p>Earthen Oven - 1km</p>
-          <p>PVR Cinemas - 5kms</p>
+        <div class="col s4 m4 l4 left" style="overflow:auto;max-height: 15vh">
+          {% for near_attr in data['nearby_attr'] %}
+            <p>{{near_attr['name']}} - {{near_attr['distance']}}</p>
+          {% endfor %}
         </div>
       </div>
       <hr>
       <div class="row" style="max-height: 15vh">
         <div class="col s6 m6 l6" style="border-right: 1px solid black;overflow:auto;max-height: 15vh">
           <p class="center" style="font-size:20px"><b>Room Features</b></p>
-          <p>Air purifier</p>
-          <p>Air Conditioner</p>
-          <p>Non-Smoking Rooms</p>
+          {% for feature in data['features'] %}
+            <p>{{feature}}</p>
+          {% endfor %}
         </div>
         <div class="col s6 m6 l6" style="overflow:auto;max-height: 15vh">
           <p class="center" style="font-size:20px"><b>Hotel Amenities</b></p>
-          <p>Free Wi-Fi</p>
-          <p>Free Parking</p>
-          <p>Free Breakfast</p>
+          {% for amenity in data['amenities'] %}
+            <p>{{amenity}}</p>
+          {% endfor %}
         </div>
       </div>
       <hr>
       <div class="row" style="max-height: 30vh; overflow: auto">
         <p class="center" style="font-size:20px"><b>FAQ's</b></p>
-        <div style="border-bottom: 0.5px solid black">
-          <p><b>Q.</b> Which popular attractions are close to SRTC Hotel Aspire?</p>
-          <p><b>Ans.</b> Nearby attractions include Sabarmati Ashram / Mahatma Gandhi's Home (1.2 km), Adalaj Step-well (0.3 km), and Gujarat Vidyapith (1.2 km).</p>
-        </div>
-        <div style="border-bottom: 0.5px solid black">
-          <p><b>Q.</b> What are some of the property amenities at SRTC Hotel Aspire? </p>
-          <p><b>Ans.</b> Some of the more popular amenities offered include free wifi, free breakfast, and free parking.</p>
-        </div>
-        <div style="border-bottom: 0.5px solid black">
-          <p><b>Q.</b> Which room amenities are available at SRTC Hotel Aspire?</p>
-          <p><b>Ans.</b> Top room amenities include air conditioning, a flat screen TV, and a desk.</p>
-        </div>
+        {% for faq in data['faqs'] %}
+          <div style="border-bottom: 0.5px solid black">
+            <p><b>Q.</b> {{faq['question']}}</p>
+            <p><b>Ans.</b> {{faq['answer']}}</p>
+          </div>
+        {% endfor %}
       </div>
       <hr>
       <div class="row" style="max-height: 50vh; overflow: auto">
         <p class="center" style="font-size:20px"><b>Reviews</b></p>
-        <div style="border-bottom: 0.5px solid black">
-          <p><b>decent budget hotel <span class="right">3 Stars</span></b></p>
-          <p><i>svi2016</i></p>
-          <p>earlier this month i went to ahmedabad for work, i was in usmanpura and wanted a budget hotel to spend the night, so i booked this hotel for 1300 rs on goibibo, for the price i paid, i found it decent. i was there just for a night, and it was a decent experience for me. you can try if you are in that area and looking for budget hotel.</p>
-        </div>
-        <div style="border-bottom: 0.5px solid black">
-          <p><b>Over priced, noisy, very basic, but clean place <span class="right">2 stars</span></b></p>
-          <p><i>Pilgrim</i></p>
-          <p>This is a budget hotel that doesn't justify the price. The rooms are not worth more than ₹ 500-700 per night.  Noisy rooms and there's no respite. Every room has that noise from the road. But it's location is good.</p>
-        </div>
+        {% for comment in data['comments'] %}
+          <div style="border-bottom: 0.5px solid black">
+            <p><b>{{comment['title']}} <span class="right">{{comment['rating']}} Stars</span></b></p>
+            <p><i>{{comment['user']}}</i></p>
+            <p>{{comment['body']}}</p>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </section>
