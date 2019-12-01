@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $('select').formSelect();
   $('.carousel').carousel();
+  $('.modal').modal();
   $('.datepicker').datepicker({
     selectMonths: true,
     minDate: new Date(2019,11,01)

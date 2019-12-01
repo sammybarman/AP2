@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AP2</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/materialize.min.css')}}" media="screen,projection">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" media="screen,projection">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center black-text darken-4">HOTELIER</a>
+    </div>
+  </nav>
+
+  <section class="infosection" style="margin-top:80px">
+    <div class="container">
+      <br>
+      <br>
+      <h3 class="center">BOOKING DETAILS</h3>
+      <hr>
+      <br>
+      <div class="row">
+        <p style="font-size:20px"><b>Hotel Name - </b> </p>
+        <p style="font-size:20px"><b>Number of Adults - </b></p>
+        <p style="font-size:20px"><b>Number of Minors - </b></p>
+        <hr>
+        <p style="font-size:20px"><b>Choose the number of rooms you require:</b></p>
+        <form class="col s5 m5 l5">
+            <div class="input-field col s12">
+              <input placeholder="Number Of Rooms" id="rooms" type="text" class="validate">
+            </div>
+        </form>
+      </div>
+      <hr>
+      <div class="row">
+        <p style="font-size:20px"><b>Total Price - </b></p>
+      </div>
+      <hr>
+      <br>
+      <br>
+      <div class="center">
+        <button type="button" name="button" class="btn cyan accent-3 waves-effect black-text modal-trigger" data-target="checkoutmod">Confirm Booking</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="checkoutmod" class="modal black">
+    <div class="modal-content center black-text">
+      <h4>Thank You!</h4>
+      <p>Your booking has been confirmed and an e-mail will be sent to your shortly!</p>
+    </div>
+    <div class="modal-footer black">
+      <button class="modal-close waves-effect waves-green btn-flat black-text">Close</button>
+    </div>
+  </div>
+
+  <footer style="padding-top: 0" class="page-footer">
+    <div class="footer-copyright">
+      <div class="container black-text text-darken-4 footlink">
+        © 2019
+        <a class="black-text text-darken-4 right footlink" href="/contact">CONTACT US!</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous">
+  </script>
+  <script src="static/js/materialize.js"></script>
+  <script src="static/js/init.js"></script>
+
+</body>
+</html>

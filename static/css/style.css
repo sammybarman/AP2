@@ -63,6 +63,7 @@
   }
 
   .infosection{
+    min-height: 100vh;
     max-height: 150vh !important;
     background-image: url("/static/img/info.jpeg");
     background-repeat: no-repeat;
@@ -151,4 +152,16 @@
 
    .indhotel:hover{
      background: rgba(5, 211, 242, 0.3);
+   }
+
+   #checkoutmod{
+     background-image: url("/static/img/nav.jpeg");
+     background-repeat: no-repeat;
+     background-size: cover;
+   }
+
+   .modal-footer{
+     background-image: url("/static/img/nav.jpeg");
+     background-repeat: no-repeat;
+     background-size: cover;
    }
