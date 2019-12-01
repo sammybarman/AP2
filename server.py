@@ -14,6 +14,10 @@ def renderPage():
 def contactPage():
     return render_template("contact.html")
 
+@app.route("/hotel")
+def hotelPage():
+    return render_template("hotel.html")
+
 @app.route("/gethotels")
 def infoPage():
     location = request.args.get('location')
