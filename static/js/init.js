@@ -58,7 +58,7 @@ function getFilterHotels() {
     body.features.push('');
   }
   if (body.price_min == null) {
-    body.price_min = 0;
+    body.price_min = -1;
   }
   if (body.price_max == null) {
     body.price_max = 100000;

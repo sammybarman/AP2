@@ -46,8 +46,8 @@ def infoPage():
 @app.route("/getfilterhotels", methods=['POST'])
 def getfilterhotels():
     js= request.get_json()
-    wheres = ' WHERE AMENITIES LIKE "%{}%"'.format(js['amenities'][0])
-    for i in js['amenities'][1:]:
+    wheres = ' WHERE CITIES.ID == CITY_ID AND CITY == ?'
+    for i in js['amenities']:
         wheres += ' AND AMENITIES LIKE "%{}%"'.format(i)
     for i in js['features']:
         wheres += ' AND FEATURES LIKE "%{}%"'.format(i)
@@ -57,7 +57,6 @@ def getfilterhotels():
             wheres += ' OR STARS == {}'.format(i)
         wheres += ')'
     wheres += ' AND PRICE >= {} AND PRICE <= {}'.format(js['price_min'], js['price_max'])
-    wheres += ' AND CITIES.ID == CITY_ID AND CITY == ?'
     sql_query = 'SELECT IMGS, STARS, NAME, CITY, INFO FROM CITIES, HOTELS{}'.format(wheres)
     # print(sql_query)
     cur.execute(sql_query, (js['city'],))
