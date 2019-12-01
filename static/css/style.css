@@ -70,6 +70,14 @@
     background-size: cover;
   }
 
+  .checkoutsection{
+    min-height: 100vh;
+    max-height: 250vh !important;
+    background-image: url("/static/img/info.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   .hotelsection{
     min-height: 100vh !important;
     background: white;
