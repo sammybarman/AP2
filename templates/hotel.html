@@ -71,19 +71,19 @@
         <p>{{data['info']}}</p>
       </div>
       <hr>
-      <div class="row" style="max-height:15vh">
+      <div class="row" style="max-height:20vh">
         <p class="center" style="font-size:20px"><b>Property Surroundings</b></p>
-        <div class="col s4 m4 l4 left" style="border-right: 1px solid black;max-height:15vh; overflow:auto">
+        <div class="col s4 m4 l4 left" style="border-right: 1px solid black;max-height:15vh;min-height:15vh; overflow:auto">
           {% for get_there in data['getting_there'] %}
             <p>{{get_there['name']}} - {{get_there['distance']}}</p>
           {% endfor %}
         </div>
-        <div class="col s4 m4 l4 left" style="border-right: 1px solid black;max-height:15vh;overflow:auto">
+        <div class="col s4 m4 l4 left" style="border-right: 1px solid black;max-height:15vh;overflow:auto;min-height:15vh;">
           {% for near_rest in data['nearby_rest'] %}
             <p>{{near_rest['name']}} - {{near_rest['distance']}}</p>
           {% endfor %}
         </div>
-        <div class="col s4 m4 l4 left" style="overflow:auto;max-height: 15vh">
+        <div class="col s4 m4 l4 left" style="overflow:auto;max-height: 15vh;min-height:15vh;">
           {% for near_attr in data['nearby_attr'] %}
             <p>{{near_attr['name']}} - {{near_attr['distance']}}</p>
           {% endfor %}
