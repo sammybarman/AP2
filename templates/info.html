@@ -21,13 +21,13 @@
   <div style="margin-top:80px" class="infobooking">
     <div class="row" style="margin-left:70px">
       <div class="input-field col s4 m4 l4" style="background:white;min-height:50px;border:2px solid black">
-        <input placeholder="DESTINATION" type="text" id="autocomplete" class="autocomplete">
+        <input placeholder="DESTINATION" value="{{data['location']}}" type="text" id="autocomplete" class="autocomplete">
       </div>
       <div class="input-field col s3 m3 l3 " style="background:white;min-height:50px;border:2px solid black">
-        <input id="start" type="date" class="datepicker" placeholder="FROM">
+        <input id="start" type="date" class="datepicker" value="{{data['date_from']}}" placeholder="FROM">
       </div>
       <div class="input-field col s3 m3 l3 " style="background:white;min-height:50px;border:2px solid black">
-        <input id="end" type="date" class="datepicker" placeholder="TO">
+        <input id="end" type="date" class="datepicker" value="{{data['date_to']}}" placeholder="TO">
       </div>
       <div class="col s1 m1 l1 " style="margin-top:15px;padding:0px;margin-left: 10px">
         <div class="valign-wrapper center-align">
@@ -85,17 +85,17 @@
             <div class="input-field col s12">
               <select multiple>
                 <option value="" disabled selected>Hotel Perks</option>
-                <option value="1">Free Wi-Fi</option>
-                <option value="2">Free Parking</option>
-                <option value="3">Car Park</option>
+                {% for amenity in data['amenities'] %}
+                  <option value="{{amenity}}">{{amenity}}</option>
+                {% endfor %}
               </select>
             </div>
             <div class="input-field col s12">
               <select multiple>
                 <option value="" disabled selected>Room Features</option>
-                <option value="1">Air-Conditioned Rooms</option>
-                <option value="2">Fireplace</option>
-                <option value="3">Housekeeping</option>
+                {% for feature in data['features'] %}
+                  <option value="{{feature}}">{{feature}}</option>
+                {% endfor %}
               </select>
             </div>
             <br>
@@ -105,7 +105,7 @@
             <p class="center"><b>Price</b></p>
             <p>Minimum</p>
             <div class="input-field col s12">
-              <select multiple>
+              <select>
                 <option value="" disabled selected>Minimum Price</option>
                 <option value="1">Rs. 0</option>
                 <option value="2">Rs. 1000</option>
@@ -119,7 +119,7 @@
             </div>
             <p>Maximum</p>
             <div class="input-field col s12">
-              <select multiple>
+              <select>
                 <option value="" disabled selected>Maximum Price</option>
                 <option value="1">Rs. 1000</option>
                 <option value="2">Rs. 2000</option>
@@ -139,56 +139,24 @@
         </div>
       </div>
       <div class="col s10 m10 l8 indhotellist" style="max-height:100vh;margin-left: 50px; border: 2px solid black; overflow: scroll">
-        <div class="indhotel" style="border:2px solid indigo; margin:10px">
-          <div class="row">
-            <div class="col s3 m3 l3 center" style="margin-top:5%">
-              <img src="https://media-cdn.tripadvisor.com/media/photo-l/17/e2/9d/b5/srtc-hotel-aspire.jpg" alt="">
-              <div class="cyan accent-3" style="width:70px; height:30px; margin-left:35%; margin-top:20px">
-                <p style="color: black" class="valign-center">3 stars</p>
+        {% for hotel in data['hotels'] %}
+          <div class="indhotel" style="border:2px solid indigo; margin:10px">
+            <div class="row">
+              <div class="col s3 m3 l3 center" style="margin-top:5%">
+                <img src="{{hotel['img']}}" alt="">
+                <div class="cyan accent-3" style="width:70px; height:30px; margin-left:35%; margin-top:20px">
+                  <p style="color: black" class="valign-center">{{hotel['stars']}} stars</p>
+                </div>
+                <button type="button" name="button" class="btn waves-effect cyan accent-3 black-text"style="margin-top: 10px">Show Prices</button>
               </div>
-              <button type="button" name="button" class="btn waves-effect cyan accent-3 black-text"style="margin-top: 10px">Show Prices</button>
-            </div>
-            <div class="col s7 m7 l7">
-                <p style="font-size: 20px" class="black-text"><b>SRTC Hotel Aspire,2240</b></p>
-                <span class="black-text">Ahmedabad,India</span>
-                <p>Located within 3.4 km of Gandhi Ashram and 5 km of IIM, SRTC Hotel Aspire features rooms with air conditioning and a shared bathroom in Ahmedabad. This 3-star hotel offers a tour desk and ticket service. The accommodation provides a 24-hour front desk, a shuttle service, room service, and free WiFi. At the hotel, each room comes with a desk, a flat-screen TV and a private bathroom. Guests at the SRTC Hotel Aspire can enjoy an Asian breakfast. Sardar Patel Stadium is 9 km from the accommodation, while Adani Group is 2 km away. The nearest airport is Sardar Vallabhbhai Patel International Airport, 17 km from SRTC Hotel Aspire.</p>
+              <div class="col s7 m7 l7">
+                  <p style="font-size: 20px" class="black-text"><b>{{hotel['name']}}</b></p>
+                  <span class="black-text">{{hotel['city']}}, India</span>
+                  <p>{{hotel['info']}}</p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="indhotel" style="border:2px solid indigo; margin:10px">
-          <div class="row">
-            <div class="col s3 m3 l3 center" style="margin-top:5%">
-              <img src="https://media-cdn.tripadvisor.com/media/photo-l/10/b8/22/50/executive-room.jpg" alt="">
-              <div class="cyan accent-3" style="width:70px; height:30px; margin-left:35%; margin-top:20px">
-                <p style="color: black" class="valign-center">3.5 stars</p>
-              </div>
-              <button type="button" name="button" class="btn waves-effect cyan accent-3 black-text"style="margin-top: 10px">Show Prices</button>
-            </div>
-            <div class="col s7 m7 l7">
-                <p style="font-size: 20px" class="black-text"><b>Hotel Cosmopolitan</b></p>
-                <span class="black-text">Ahmedabad,India</span>
-                <p>Located in the heart of bustling city of Ahmedabad, Hotel Cosmopolitan offers 52 spacious rooms with an eclectic blend of contemporary ambience and comfort. This boutique hotel is located just 20 minutes (10 kms) from Ahmedabad airport and 15 minutes (5.5 kms) from the main railway station at Kalupur. The popular shopping and commercial area of C.G. Road in Navrangpura is very close by. Coriander - our restaurant - serves a blend of popular cuisines including North Indian, South Indian, Gujarati, Oriental, Italian and Mexican.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="indhotel" style="border:2px solid indigo; margin:10px">
-          <div class="row">
-            <div class="col s3 m3 l3 center" style="margin-top:5%">
-              <img src="https://media-cdn.tripadvisor.com/media/photo-l/16/a0/d4/d7/the-ummed-ahmedabad.jpg" alt="">
-              <div class="cyan accent-3" style="width:70px; height:30px; margin-left:35%; margin-top:20px">
-                <p style="color: black" class="valign-center">5 stars</p>
-              </div>
-              <button type="button" name="button" class=" btn waves-effect cyan accent-3 black-text"style="margin-top: 10px">Show Prices</button>
-            </div>
-            <div class="col s7 m7 l7">
-                <p style="font-size: 20px" class="black-text"><b>The Ummed Ahmedabad</b></p>
-                <span class="black-text">Ahmedabad,India</span>
-                <p>The Ummed Ahmedabad, located just 1 km from the airport and in close proximity to the government and developing industrial areas makes this location an apt choice. The Ummed Ahmedabad, is an oasis of warmth and soothing surroundings. Splashes of greens and blue welcome you to our elegantly designed, low-rise property spread over four acres of manicured gardens. The location of hotel is well connected to the old and new business districts of Ahmedabad. Gandhinagar, the state government's seat, is also a short 15 minute drive from the hotel. Feel welcomed in one of the 91 rooms and suites along with gives you a choice of indoor and outdoor venues to host your business or social events. The hotel boasts of ease of access, manicured gardens, world class amenities and customized food and beverage services to create the memorable events. Tastefully appointed using suitable tones, styled with custom made teak furniture and convenient amenities.</p>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
