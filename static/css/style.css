@@ -69,6 +69,11 @@
     background-size: cover;
   }
 
+  .hotelsection{
+    min-height: 100vh !important;
+    background: white;
+  }
+
   .hotellist{
     height: 300px !important;
   }
