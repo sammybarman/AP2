@@ -115,3 +115,8 @@ function calcCost() {
   }
   $('#totalcost').html('<b>Total Price - '+cost+'</b>')
 }
+
+$("form").submit(function(e){
+  e.preventDefault();
+  $('#checkoutmod').modal('open'); 
+});
