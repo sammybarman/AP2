@@ -4,7 +4,7 @@ $(document).ready(function(){
   $('.modal').modal();
   $('.datepicker').datepicker({
     selectMonths: true,
-    minDate: new Date(2019,11,01)
+    minDate: new Date(2019,11,04)
   });
   $('.dropdown-trigger').dropdown({
     hover: true,
@@ -12,13 +12,6 @@ $(document).ready(function(){
     alignment: 'right',
     coverTrigger: false,
     closeOnClick: false
-  });
-  $('input.autocomplete').autocomplete2({
-    data: [
-      {id:1,text:'Apple',img:'http://placehold.it/250x250'},
-      {id:2,text:'Microsoft',img:'http://placehold.it/250x250'},
-      {id:3,text:'Google',img:'http://placehold.it/250x250'},
-    ]
   });
 });
 
@@ -118,5 +111,5 @@ function calcCost() {
 
 $("form").submit(function(e){
   e.preventDefault();
-  $('#checkoutmod').modal('open'); 
+  $('#checkoutmod').modal('open');
 });

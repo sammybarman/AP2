@@ -57,7 +57,9 @@ def hotelPage():
         element['user'] = row[2]
         element['title'] = row[3]
         comments.append(element)
-    return render_template("hotel.html", data={'hotel_id': hotel_id, 'location': location, 'date_from': date_from, 'date_to':date_to, 'img': img, 'name': name, 'info': info, 'getting_there': getting_there, 'nearby_rest': nearby_rest, 'near_attr': nearby_attr, 'features': features, 'amenities': amenities, 'faqs': faqs, 'comments': comments})
+    cur.execute('SELECT CITY FROM CITIES')
+    cities = [city[0] for city in cur.fetchall()]
+    return render_template("hotel.html", data={'hotel_id': hotel_id, 'location': location, 'date_from': date_from, 'date_to':date_to, 'img': img, 'name': name, 'info': info, 'getting_there': getting_there, 'nearby_rest': nearby_rest, 'near_attr': nearby_attr, 'features': features, 'amenities': amenities, 'faqs': faqs, 'comments': comments, 'cities': cities})
 
 @app.route("/gethotels")
 def infoPage():
@@ -87,7 +89,9 @@ def infoPage():
         element['city'] = row[3]
         element['info'] = row[4]
         hotels.append(element)
-    return render_template("info.html", data={'hotels': hotels, 'features': features, 'amenities': amenities, 'date_from': date_from, 'date_to': date_to, 'location': location})
+    cur.execute('SELECT CITY FROM CITIES')
+    cities = [city[0] for city in cur.fetchall()]
+    return render_template("info.html", data={'hotels': hotels, 'features': features, 'amenities': amenities, 'date_from': date_from, 'date_to': date_to, 'location': location, 'cities': cities})
 
 @app.route("/getfilterhotels", methods=['POST'])
 def getfilterhotels():

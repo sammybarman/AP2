@@ -21,7 +21,12 @@
   <div style="margin-top:80px" class="infobooking">
     <div class="row" style="margin-left:70px">
       <div class="input-field col s4 m4 l4" style="background:white;min-height:50px;border:2px solid black">
-        <input placeholder="DESTINATION" value="{{data['location']}}" type="text" id="autocomplete" class="autocomplete">
+        <input placeholder="DESTINATION" value="{{data['location']}}" type="text" id="autocomplete" class="autocomplete" list="cities" name="cities">
+        <datalist id="cities">
+          {% for city in data['cities'] %}
+            <option value="{{city}}">
+          {% endfor %}
+        </datalist>
       </div>
       <div class="input-field col s3 m3 l3 " style="background:white;min-height:50px;border:2px solid black">
         <input id="start" type="date" class="datepicker" value="{{data['date_from']}}" placeholder="FROM">
@@ -31,7 +36,7 @@
       </div>
       <div class="col s1 m1 l1 " style="margin-top:15px;padding:0px;margin-left: 10px">
         <div class="valign-wrapper center-align">
-          <button class="btn btn-large forjq center cyan accent-3 black-text waves-effect"><i class="material-icons center">search</i></button>
+          <button onclick="getHotels()" class="btn btn-large forjq center cyan accent-3 black-text waves-effect"><i class="material-icons center">search</i></button>
         </div>
       </div>
     </div>
