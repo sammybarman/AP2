@@ -8,7 +8,9 @@ cur = conn.cursor()
 
 @app.route("/")
 def renderPage():
-    return render_template("index.html")
+    cur.execute('SELECT CITY FROM CITIES')
+    cities = [city[0] for city in cur.fetchall()]
+    return render_template("index.html", data={'cities': cities})
 
 @app.route("/contact")
 def contactPage():

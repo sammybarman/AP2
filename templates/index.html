@@ -29,7 +29,12 @@
         </div>
         <div class="row">
           <div class="input-field col s4 m4 l4" style="margin-top:43px;background:white;min-height:50px;border:2px solid black">
-            <input placeholder="DESTINATION" type="text" id="autocomplete" class="autocomplete">
+            <input placeholder="DESTINATION" type="text" id="autocomplete" class="autocomplete" list="cities" name="cities">
+            <datalist id="cities">
+              {% for city in data['cities'] %}
+                <option value="{{city}}">
+              {% endfor %}
+            </datalist>
           </div>
           <div class="input-field col s3 m3 l3 " style="margin-top:43px;background:white;min-height:50px;border:2px solid black">
             <input id="start" type="date" class="datepicker" placeholder="FROM">
@@ -53,7 +58,7 @@
         <div class="col s12 m3 l4">
           <div class="card cardstuff teal">
             <div class="card-image">
-                <a href="#!"><img src="/static/img/delhi.jpeg"></a>
+                <a href="/gethotels?location=Delhi&date_from=&date_to="><img src="/static/img/delhi.jpeg"></a>
                 <span class="card-title">DELHI</span>
             </div>
           </div>
@@ -61,7 +66,7 @@
         <div class="col s12 m3 l4">
           <div class="card cardstuff teal">
             <div class="card-image">
-                <a href="#!"><img src="/static/img/mumbai.jpeg"></a>
+                <a href="gethotels?location=Mumbai&date_from=&date_to="><img src="/static/img/mumbai.jpeg"></a>
                 <span class="card-title">MUMBAI</span>
             </div>
           </div>
@@ -69,7 +74,7 @@
         <div class="col s12 m3 l4">
           <div class="card cardstuff teal">
             <div class="card-image">
-                <a href="#!"><img src="/static/img/kolkata.jpeg"></a>
+                <a href="gethotels?location=Kolkata&date_from=&date_to="><img src="/static/img/kolkata.jpeg"></a>
                 <span class="card-title">KOLKATA</span>
             </div>
           </div>
@@ -79,7 +84,7 @@
         <div class="col s12 m3 l4">
           <div class="card cardstuff teal">
             <div class="card-image">
-                <a href="#!"><img src="/static/img/bangalore.jpeg"></a>
+                <a href="gethotels?location=Bengaluru&date_from=&date_to="><img src="/static/img/bangalore.jpeg"></a>
                 <span class="card-title">BANGALORE</span>
             </div>
           </div>
@@ -87,7 +92,7 @@
         <div class="col s12 m3 l4">
           <div class="card cardstuff teal">
             <div class="card-image">
-                <a href="#!"><img src="/static/img/hyderabad.jpeg"></a>
+                <a href="gethotels?location=Hyderabad&date_from=&date_to="><img src="/static/img/hyderabad.jpeg"></a>
                 <span class="card-title">HYDERABAD</span>
             </div>
           </div>
@@ -95,7 +100,7 @@
         <div class="col s12 m3 l4">
           <div class="card cardstuff teal">
             <div class="card-image">
-                <a href="#!"><img src="/static/img/chennai.jpeg"></a>
+                <a href="gethotels?location=Chennai&date_from=&date_to="><img src="/static/img/chennai.jpeg"></a>
                 <span class="card-title">CHENNAI</span>
             </div>
           </div>
